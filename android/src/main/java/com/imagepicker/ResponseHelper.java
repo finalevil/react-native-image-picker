@@ -73,6 +73,9 @@ public class ResponseHelper
 
     public void invokeResponse(@NonNull final Callback callback)
     {
-        callback.invoke(response);
+      if (callback == null) {
+          return;
+      }
+      callback.invoke(response);
     }
 }
